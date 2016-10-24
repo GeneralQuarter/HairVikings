@@ -1,19 +1,22 @@
 ## Brief Cases Hugo
 
 ### UC1: Quit Game 
-When the player clicks on the button “Quit Game”, all methods stops and the game ends.
+When the player clicks on the button “Quit Game”, the game ends and the window closes.
 
 ### UC5: Play music/sound 
-In the “Set Options” section, this option allows the player to let the sounds and music or to switch it off.
+In the “Set Options” section, this option allows the player to activate the sounds and music, or to switch it off.
 
 ### UC10: Boost resources 
- Can be used by the player and the AI, allows to create a link between 2 allies nodes, resulting in the improvement of the unit production of one of the selected nodes.
+Is a UC4 type. Can be used by the player and the AI. 
+Allows to create a link between two ally nodes, moving half of the productivity from the "origin" node to the "end" node.
 
 ### UC11: Modify Nodes 
-Done by the System, if a Node reach a certain amount of units, the Nodes become bigger, resulting in the improvement of the unit production or smaller, resulting in the decreasing of the unit production.
+Done by the System, if a node reachs a certain resource amount, the node grows stronger, resulting in the improvement of the productivity.
+Moreover, if a node resources decrease lower than a certain amount, the node shrinks, resulting in the decreasing of the productivity.
 
 ### UC14: Increase Resources 
 Done by the system, increment the nodes units by a certain amount every x time.
+Done by the player and the AI when a "boost" link is created, gives half of the "origin" node resources to the "end" node.
 
 ## List of use cases
 * [Acess to use cases list][L]
