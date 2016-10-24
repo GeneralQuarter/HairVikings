@@ -24,12 +24,3 @@
 |  14  | Increase Resources and productivity | 4 | 2 | **H** |
 |  15  | Decrease Resources and productivity | 4 | 2 | **A** |
 
-## Brief cases
-
-* [Brief cases of Anthony][A]
-* [Brief cases of Hugo][H]
-* [Brief cases of Quentin][Q]
-
-[A]:BriefCasesAnthony.md
-[H]:BriefCasesHugo.md
-[Q]:BriefCasesQuentin.md
