@@ -13,16 +13,16 @@
 |  3  | Pause Game | 2 | 2 | **A** |
 |  4  | Create a link | 4 | 2 | **Q** |
 |  5  | Play Music/Sound | 0 | 3 | **H** |
-|  6  | Set links color | 0 | 1 | **A** |
-|  7  | Set nodes color | 0 | 1 | **A** |
+|  6  | Set link color | 0 | 1 | **A** |
+|  7  | Set node color | 0 | 1 | **A** |
 |  8  | Set AI difficulty | 1 | 4 | **Q** |
 |  9  | Attack (Enemy node) | 4 | 2 | **Q** |
 |  10  | Boost resources (Ally node) | 3 | 2 | **H** |
 |  11  | Modify Nodes (Size/Production) | 2 | 2 | **H** |
 |  12  | Update Map (Timer) | 4 | 3 | **Q** |
 |  13  | Generate Map | 4 | 2 | **A** |
-|  14  | Increase Resources | 4 | 2 | **H** |
-|  15  | Decrease Resources | 2 | 2 | **A** |
+|  14  | Increase Resources and productivity | 4 | 2 | **H** |
+|  15  | Decrease Resources and productivity | 4 | 2 | **A** |
 
 ## Brief cases
 
