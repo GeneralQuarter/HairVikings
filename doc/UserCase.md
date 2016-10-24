@@ -26,16 +26,16 @@
 |  3  | Pause Game | 2 | 2 | <span class="a">**A**</span> |
 |  4  | Create a link | 4 | 2 | <span class="q">**Q**</span> |
 |  5  | Play Music/Sound | 0 | 3 | <span class="h">**H**</span> |
-|  6  | Set links color | 0 | 1 | <span class="a">**A**</span>|
-|  7  | Set nodes color | 0 | 1 | <span class="a">**A**</span> |
+|  6  | Set link color | 0 | 1 | <span class="a">**A**</span>|
+|  7  | Set node color | 0 | 1 | <span class="a">**A**</span> |
 |  8  | Set AI difficulty | 1 | 4 | <span class="q">**Q**</span> |
 |  9  | Attack (Enemy node) | 4 | 2 | <span class="q">**Q**</span> |
 |  10  | Boost resources (Ally node) | 3 | 2 | <span class="h">**H**</span> |
 |  11  | Modify Nodes (Size/Production) | 2 | 2 | <span class="h">**H**</span> |
 |  12  | Update Map (Timer) | 4 | 3 | <span class="q">**Q**</span> |
 |  13  | Generate Map | 4 | 2 | <span class="a">**A**</span> |
-|  14  | Increase Resources | 4 | 2 | <span class="h">**H**</span> |
-|  15  | Decrease Resources | 2 | 2 | <span class="a">**A**</span> |
+|  14  | Increase Resources and productivity | 4 | 2 | <span class="h">**H**</span> |
+|  15  | Decrease Resources and productivity | 4 | 2 | <span class="a">**A**</span> |
 
 ## Brief cases
 
