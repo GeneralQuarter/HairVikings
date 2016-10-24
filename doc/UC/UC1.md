@@ -6,7 +6,7 @@ When the player clicks on the button “Quit Game”, the game ends and the wind
 
 
 
-***Author** : Hugo*
+*Author: Hugo*
 
 ## List of use cases
 * [Acess to use cases list][L]
