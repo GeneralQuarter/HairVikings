@@ -27,4 +27,4 @@ Used by the system. Update all the nodes each second.
 
 [A]:BriefCasesAnthony.md
 [H]:BriefCasesHugo.md
-[L]:userCase.md
+[L]:UserCase.md
