@@ -1,4 +1,5 @@
-## UC1: Quit Game 
+## UC1: Quit Game
+###Brief Case
 
 When the player clicks on the button “Quit Game”, the game ends and the window closes.
 

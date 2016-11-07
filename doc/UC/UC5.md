@@ -1,4 +1,5 @@
-## UC5: Play music/sound 
+## UC5: Play music/sound
+###Brief Case
 
 In the “Set Options” section, this option allows the player to activate the sounds and music, or to switch it off.
 
