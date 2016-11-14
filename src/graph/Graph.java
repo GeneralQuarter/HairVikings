@@ -1,5 +1,9 @@
 package graph;
 
+import javafx.scene.Group;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.Pane;
+
 /**
  * Created by t00191729 on 14/11/2016.
  * Made by Roland -> http://stackoverflow.com/questions/30679025/graph-visualisation-like-yfiles-in-javafx
@@ -12,8 +16,6 @@ public class Graph {
     private Group canvas;
 
     private ZoomableScrollPane scrollPane;
-
-    MouseGestures mouseGestures;
 
     /**
      * the pane wrapper is necessary or else the scrollpane would always align
@@ -30,8 +32,6 @@ public class Graph {
         cellLayer = new CellLayer();
 
         canvas.getChildren().add(cellLayer);
-
-        mouseGestures = new MouseGestures(this);
 
         scrollPane = new ZoomableScrollPane(canvas);
 
@@ -64,11 +64,6 @@ public class Graph {
         // remove components from graph pane
         getCellLayer().getChildren().removeAll(model.getRemovedCells());
         getCellLayer().getChildren().removeAll(model.getRemovedEdges());
-
-        // enable dragging of cells
-        for (Cell cell : model.getAddedCells()) {
-            mouseGestures.makeDraggable(cell);
-        }
 
         // every cell must have a parent, if it doesn't, then the graphParent is
         // the parent

@@ -1,7 +1,12 @@
+import graph.CellType;
+import graph.Graph;
+import graph.Model;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import layout.Layout;
+import layout.RandomLayout;
 
 /**
  * Created by t00191774 on 14/11/2016.

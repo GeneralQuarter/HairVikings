@@ -7,9 +7,7 @@ package layout;
 
 import java.util.List;
 import java.util.Random;
-import com.fxgraph.graph.Cell;
-import com.fxgraph.graph.Graph;
-import com.fxgraph.layout.base.Layout;
+import graph.Cell;
 import graph.Graph;
 
 public class RandomLayout extends Layout {
