@@ -6,5 +6,10 @@ package graph;
  */
 public enum CellType {
     RECTANGLE,
-    TRIANGLE;
+    TRIANGLE,
+    LABEL,
+    IMAGE,
+    BUTTON,
+    TITLEDPANE
+    ;
 }
