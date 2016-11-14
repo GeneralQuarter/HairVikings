@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cells.CircleCell;
 import cells.TriangleCell;
 import cells.RectangleCell;
 
@@ -88,7 +89,12 @@ public class Model {
                 break;
 
             case TRIANGLE:
-                TriangleCell circleCell = new TriangleCell(id);
+                TriangleCell triangleCell = new TriangleCell(id);
+                addCell(triangleCell);
+                break;
+
+            case CIRCLE:
+                CircleCell circleCell = new CircleCell(id);
                 addCell(circleCell);
                 break;
 

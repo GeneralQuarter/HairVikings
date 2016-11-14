@@ -44,21 +44,24 @@ public class Main extends Application {
 
         graph.beginUpdate();
 
-        model.addCell("Cell A", CellType.RECTANGLE);
-        model.addCell("Cell B", CellType.RECTANGLE);
-        model.addCell("Cell C", CellType.RECTANGLE);
-        model.addCell("Cell D", CellType.TRIANGLE);
-        model.addCell("Cell E", CellType.TRIANGLE);
-        model.addCell("Cell F", CellType.RECTANGLE);
-        model.addCell("Cell G", CellType.RECTANGLE);
+        model.addCell("Enemy", CellType.TRIANGLE);
+        model.addCell("Player", CellType.RECTANGLE);
+        model.addCell("Neutral 1", CellType.CIRCLE);
+        model.addCell("Neutral 2", CellType.CIRCLE);
+        model.addCell("Neutral 3", CellType.CIRCLE);
+        model.addCell("Neutral 4", CellType.CIRCLE);
+        model.addCell("Neutral 5", CellType.CIRCLE);
 
-        model.addEdge("Cell A", "Cell B");
-        model.addEdge("Cell A", "Cell C");
-        model.addEdge("Cell B", "Cell C");
-        model.addEdge("Cell C", "Cell D");
-        model.addEdge("Cell B", "Cell E");
-        model.addEdge("Cell D", "Cell F");
-        model.addEdge("Cell D", "Cell G");
+        model.addEdge("Player", "Neutral 1");
+        model.addEdge("Player", "Neutral 2");
+        model.addEdge("Player", "Neutral 3");
+        model.addEdge("Neutral 1", "Neutral 3");
+        model.addEdge("Neutral 2", "Neutral 3");
+        model.addEdge("Neutral 1", "Neutral 4");
+        model.addEdge("Neutral 2", "Neutral 5");
+        model.addEdge("Neutral 3", "Neutral 4");
+        model.addEdge("Neutral 3", "Enemy");
+        model.addEdge("Neutral 3", "Neutral 5");
 
         graph.endUpdate();
 
