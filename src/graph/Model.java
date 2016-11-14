@@ -97,6 +97,25 @@ public class Model {
                 CircleCell circleCell = new CircleCell(id);
                 addCell(circleCell);
                 break;
+            case LABEL:
+                LabelCell labelCell = new LabelCell(id);
+                addCell(labelCell);
+                break;
+
+            case IMAGE:
+                ImageCell imageCell = new ImageCell(id);
+                addCell(imageCell);
+                break;
+
+            case BUTTON:
+                ButtonCell buttonCell = new ButtonCell(id);
+                addCell(buttonCell);
+                break;
+
+            case TITLEDPANE:
+                TitledPaneCell titledPaneCell = new TitledPaneCell(id);
+                addCell(titledPaneCell);
+                break;
 
             default:
                 throw new UnsupportedOperationException("Unsupported type: " + type);

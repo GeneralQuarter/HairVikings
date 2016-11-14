@@ -7,5 +7,9 @@ package graph;
 public enum CellType {
     RECTANGLE,
     TRIANGLE,
-    CIRCLE
+    LABEL,
+    IMAGE,
+    BUTTON,
+    TITLEDPANE,
+    CIRCLE;
 }
