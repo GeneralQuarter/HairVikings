@@ -23,6 +23,8 @@
 |  13  | [Generate Map][UC13] | 4 | 2 | **A** |
 |  14  | [Increase Resources and productivity][UC14] | 4 | 2 | **H** |
 |  15  | [Decrease Resources and productivity][UC15] | 4 | 2 | **A** |
+|  16  | [Delete a link][UC16] | 4 | 2 |  |
+|  17  | [Destroy a link][UC17] | 3 | 2 |  |
 
 [UC1]:UC/UC1.md
 [UC2]:UC/UC2.md
@@ -39,4 +41,5 @@
 [UC13]:UC/UC13.md
 [UC14]:UC/UC14.md
 [UC15]:UC/UC15.md
-
+[UC16]:UC/UC16.md
+[UC17]:UC/UC17.md
