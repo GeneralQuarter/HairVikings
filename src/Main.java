@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import layout.FixedLayout;
 import layout.Layout;
 import layout.RandomLayout;
 
@@ -33,7 +34,7 @@ public class Main extends Application {
 
         addGraphComponents();
 
-        Layout layout = new RandomLayout(graph);
+        Layout layout = new FixedLayout(graph, scene.getWidth(), scene.getHeight());
         layout.execute();
 
     }
@@ -62,6 +63,8 @@ public class Main extends Application {
         model.addEdge("Neutral 3", "Neutral 4");
         model.addEdge("Neutral 3", "Enemy");
         model.addEdge("Neutral 3", "Neutral 5");
+        model.addEdge("Neutral 4", "Enemy");
+        model.addEdge("Neutral 5", "Enemy");
 
         graph.endUpdate();
 

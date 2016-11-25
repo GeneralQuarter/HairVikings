@@ -55,6 +55,10 @@ public class Model {
         addedEdges.clear();
     }
 
+    public Cell getCell(String id) {
+        return cellMap.get(id);
+    }
+
     public List<Cell> getAddedCells() {
         return addedCells;
     }
@@ -96,25 +100,6 @@ public class Model {
             case CIRCLE:
                 CircleCell circleCell = new CircleCell(id);
                 addCell(circleCell);
-                break;
-            case LABEL:
-                LabelCell labelCell = new LabelCell(id);
-                addCell(labelCell);
-                break;
-
-            case IMAGE:
-                ImageCell imageCell = new ImageCell(id);
-                addCell(imageCell);
-                break;
-
-            case BUTTON:
-                ButtonCell buttonCell = new ButtonCell(id);
-                addCell(buttonCell);
-                break;
-
-            case TITLEDPANE:
-                TitledPaneCell titledPaneCell = new TitledPaneCell(id);
-                addCell(titledPaneCell);
                 break;
 
             default:
