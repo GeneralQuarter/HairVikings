@@ -1,6 +1,6 @@
 ##UC3: Pause Game
-###Brief
-A player can make in pause the game thanks to a button and come back on the game after some time. The player has to find back his game like before the pause.
+### Summary
+A user can initiate a pause whenever he wants. The paused game must not change state as long as the pause is on.
 
 *Author : Anthony*
 ## List of use cases

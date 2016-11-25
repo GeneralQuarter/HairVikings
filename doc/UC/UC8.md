@@ -1,5 +1,6 @@
 ## UC8: Set AI difficulty
-At the start of the game the player can change the difficulty of the AI (easy, medium, hard).
+### Summary
+At the start of the game the user can change the difficulty of the AI (easy, medium, hard).
 
 *Author: Quentin*
 

@@ -1,7 +1,7 @@
 ## UC1: Quit Game
-###Brief Case
+### Summary
 
-When the player clicks on the button “Quit Game”, the game ends and the window closes.
+When the user clicks on the button “Quit Game”, the game ends and the window closes.
 
 *Author: Hugo*
 

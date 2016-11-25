@@ -1,6 +1,6 @@
 ##UC7: Set nodes color
-###Brief
-A player can configure node color option according to his taste.
+### Summary
+A user can configure the node color according to his taste.
 
 *Author : Anthony*
 ## List of use cases

@@ -1,8 +1,7 @@
 ## UC5: Play music/sound
-###Brief Case
+###Summary
 
-In the “Set Options” section, this option allows the player to activate the sounds and music, or to switch it off.
-
+A user can activate the sounds and music, or switch it off.
 
 *Author: Hugo*
 ## List of use cases
