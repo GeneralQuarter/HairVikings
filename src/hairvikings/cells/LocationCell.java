@@ -13,13 +13,21 @@ import javafx.scene.shape.Circle;
 public class LocationCell  extends Cell{
 
     private Team team;
+    private int resources;
+    private int productivity;
+
 
     public LocationCell(String cellId) {
         super(cellId);
 
-        double radius = 25;
+        //temporary default initialisation
+        resources = 50;
+        productivity = 5;
 
         team = Team.NEUTRAL;
+
+        //This should be an image rather than a circle.
+        double radius = 25;
 
         Circle view = new Circle(radius);
 
@@ -53,4 +61,27 @@ public class LocationCell  extends Cell{
         ((Circle) getView()).setStroke(Color.GRAY);
         ((Circle) getView()).setFill(Color.GRAY);
     }
+
+    public void decreaseResources(int amount){
+        this.resources -= amount;
+        if(this.resources <= 0)
+        {
+            //change the team;
+        }
+    }
+
+    public void decreaseProductivity(int amount){
+        this.productivity -=amount;
+        if(this.productivity < 0)
+        {
+            //decrease resources
+        }
+        else if(this.productivity > 0)
+        {
+            //increase resources
+        }
+
+    }
+
+
 }
