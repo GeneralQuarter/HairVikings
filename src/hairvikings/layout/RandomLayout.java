@@ -1,4 +1,4 @@
-package layout;
+package hairvikings.layout;
 
 /**
  * Created by t00191729 on 14/11/2016.
@@ -7,8 +7,8 @@ package layout;
 
 import java.util.List;
 import java.util.Random;
-import graph.Cell;
-import graph.Graph;
+import hairvikings.graph.Cell;
+import hairvikings.graph.Graph;
 
 public class RandomLayout extends Layout {
 

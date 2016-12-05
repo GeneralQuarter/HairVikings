@@ -1,16 +1,18 @@
-package graph;
+package hairvikings.graph;
 
 /**
  * Created by t00191774 on 14/11/2016.
  * Made by Roland -> http://stackoverflow.com/questions/30679025/graph-visualisation-like-yfiles-in-javafx
  */
 import javafx.scene.Group;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
 public class Edge extends Group {
 
     protected Cell source;
     protected Cell target;
+    protected boolean shown;
 
     Line line;
 
@@ -23,6 +25,8 @@ public class Edge extends Group {
         target.addCellParent(source);
 
         line = new Line();
+
+        hide();
 
         line.startXProperty().bind( source.layoutXProperty().add(source.getBoundsInParent().getWidth() / 2.0));
         line.startYProperty().bind( source.layoutYProperty().add(source.getBoundsInParent().getHeight() / 2.0));
@@ -42,4 +46,17 @@ public class Edge extends Group {
         return target;
     }
 
+    public boolean isShown() {
+        return shown;
+    }
+
+    public void show() {
+        line.setStroke(Color.BLACK);
+        shown = true;
+    }
+
+    public void hide() {
+        line.setStroke(Color.TRANSPARENT);
+        shown = false;
+    }
 }

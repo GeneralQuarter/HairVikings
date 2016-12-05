@@ -1,4 +1,4 @@
-package graph;
+package hairvikings.graph;
 
 /**
  * Created by t00191729 on 14/11/2016.
@@ -10,9 +10,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cells.CircleCell;
-import cells.TriangleCell;
-import cells.RectangleCell;
+import hairvikings.cells.CircleCell;
+import hairvikings.cells.LocationCell;
+import hairvikings.cells.TriangleCell;
+import hairvikings.cells.RectangleCell;
 
 public class Model {
 
@@ -59,6 +60,19 @@ public class Model {
         return cellMap.get(id);
     }
 
+    public Edge getEdge(Cell source, Cell end) {
+        for (Edge edge : allEdges) {
+            if (
+                    (source.getCellId().equals(edge.getSource().getCellId()) && end.getCellId().equals(edge.getTarget().getCellId()))
+                    ||
+                    (source.getCellId().equals(edge.getTarget().getCellId()) && end.getCellId().equals(edge.getSource().getCellId()))
+                    ) {
+                return edge;
+            }
+        }
+        return null;
+    }
+
     public List<Cell> getAddedCells() {
         return addedCells;
     }
@@ -102,12 +116,17 @@ public class Model {
                 addCell(circleCell);
                 break;
 
+            case LOCATION:
+                LocationCell locationCell = new LocationCell(id);
+                addCell(locationCell);
+                break;
+
             default:
                 throw new UnsupportedOperationException("Unsupported type: " + type);
         }
     }
 
-    private void addCell( Cell cell) {
+    public void addCell( Cell cell) {
 
         addedCells.add(cell);
 

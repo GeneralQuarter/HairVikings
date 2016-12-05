@@ -1,6 +1,6 @@
-package cells;
+package hairvikings.cells;
 
-import graph.Cell;
+import hairvikings.graph.Cell;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
 

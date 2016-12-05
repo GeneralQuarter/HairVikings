@@ -1,4 +1,4 @@
-package graph;
+package hairvikings.graph;
 /**
  * Created by t00191774 on 14/11/2016.
  * Made by Roland -> http://stackoverflow.com/questions/30679025/graph-visualisation-like-yfiles-in-javafx

@@ -1,10 +1,8 @@
-package layout;
+package hairvikings.layout;
 
-import graph.Cell;
-import graph.Graph;
-import graph.Model;
-
-import java.util.List;
+import hairvikings.graph.Edge;
+import hairvikings.graph.Graph;
+import hairvikings.graph.Model;
 
 /**
  * Created by Quentin Gangler on 25/11/2016.

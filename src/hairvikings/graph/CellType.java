@@ -1,4 +1,4 @@
-package graph;
+package hairvikings.graph;
 
 /**
  * Created by t00191774 on 14/11/2016.
@@ -8,9 +8,6 @@ package graph;
 public enum CellType {
     RECTANGLE,
     TRIANGLE,
-    LABEL,
-    IMAGE,
-    BUTTON,
-    TITLEDPANE,
+    LOCATION,
     CIRCLE;
 }
