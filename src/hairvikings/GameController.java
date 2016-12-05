@@ -44,11 +44,14 @@ public class GameController {
         EventHandler<MouseEvent> mouseEventEventHandler = event -> {
             if (event.getSource() instanceof Cell) {
                 LocationCell cellClicked = (LocationCell) event.getSource();
-                if (firstCellClicked == null && cellClicked.isControlledBy(player)) {
-                    firstCellClicked = cellClicked;
+                if (firstCellClicked == null) {
+                    if(cellClicked.isControlledBy(player)) {
+                        firstCellClicked = cellClicked;
+                        firstCellClicked.select();
+                    }
                 } else {
                     secondCellClicked = cellClicked;
-                    linkSelectionCells();
+                    createLink();
                 }
             }
         };
@@ -58,8 +61,8 @@ public class GameController {
         }
     }
 
-    private void linkSelectionCells() {
-        if (firstCellClicked != null && secondCellClicked != null && !firstCellClicked.getCellId().equals(secondCellClicked.getCellId())) {
+    private void createLink() {
+        if (areSelectionCellsNotNull() && !areSelectionCellsEquals()) {
             Edge edge = getGraph().getModel().getEdge(firstCellClicked, secondCellClicked);
             if (edge != null) {
                edge.show();
@@ -69,7 +72,18 @@ public class GameController {
         clearSelectionCells();
     }
 
+    private boolean areSelectionCellsNotNull() {
+        return firstCellClicked != null && secondCellClicked != null;
+    }
+
+    private boolean areSelectionCellsEquals() {
+        return firstCellClicked.getCellId().equals(secondCellClicked.getCellId());
+    }
+
     private void clearSelectionCells() {
+        if(firstCellClicked != null) {
+            firstCellClicked.unSelect();
+        }
         firstCellClicked = null;
         secondCellClicked = null;
     }

@@ -43,4 +43,14 @@ public class LocationCell  extends Cell{
     public boolean isControlledBy(AbstractPlayer abstractPlayer) {
         return team == abstractPlayer.getTeam();
     }
+
+    public void select() {
+        ((Circle) getView()).setStroke(Color.GREEN);
+        ((Circle) getView()).setFill(Color.GREEN);
+    }
+
+    public void unSelect() {
+        ((Circle) getView()).setStroke(Color.GRAY);
+        ((Circle) getView()).setFill(Color.GRAY);
+    }
 }
