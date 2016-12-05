@@ -2,7 +2,10 @@ package hairvikings.cells;
 
 import hairvikings.AbstractPlayer;
 import hairvikings.Team;
+import hairvikings.Level;
 import hairvikings.graph.Cell;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
@@ -13,22 +16,25 @@ import javafx.scene.shape.Circle;
 public class LocationCell  extends Cell{
 
     private Team team;
+    private Level level;
 
     public LocationCell(String cellId) {
         super(cellId);
 
-        double radius = 25;
-
         team = Team.NEUTRAL;
 
-        Circle view = new Circle(radius);
+        level = Level.HOUSE;
 
-        view.setStroke(Color.GRAY);
+        ImageView view = new ImageView(new Image(level.getImagePATH()));
+        view.setFitHeight(100);
+        view.setFitWidth(100);
+
+        /*view.setStroke(Color.GRAY);
         view.setFill(Color.GRAY);
 
         view.setCenterX(radius);
         view.setCenterY(radius);
-
+*/
         setView(view);
     }
 
@@ -45,12 +51,12 @@ public class LocationCell  extends Cell{
     }
 
     public void select() {
-        ((Circle) getView()).setStroke(Color.GREEN);
-        ((Circle) getView()).setFill(Color.GREEN);
+       /* ((Circle) getView()).setStroke(Color.GREEN);
+        ((Circle) getView()).setFill(Color.GREEN);*/
     }
 
     public void unSelect() {
-        ((Circle) getView()).setStroke(Color.GRAY);
-        ((Circle) getView()).setFill(Color.GRAY);
+       /* ((Circle) getView()).setStroke(Color.GRAY);
+        ((Circle) getView()).setFill(Color.GRAY);*/
     }
 }
