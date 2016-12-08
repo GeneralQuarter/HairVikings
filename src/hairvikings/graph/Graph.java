@@ -29,10 +29,13 @@ public class Graph {
         this.model = new Model();
 
         canvas = new Group();
+
+        // TODO: 08/12/2016 refractor 
         cellLayer = new CellLayer();
 
         canvas.getChildren().add(cellLayer);
 
+        // TODO: 08/12/2016 refractor 
         scrollPane = new ZoomableScrollPane(canvas);
 
         scrollPane.setFitToWidth(true);
@@ -52,6 +55,7 @@ public class Graph {
         return model;
     }
 
+    // TODO: 08/12/2016 refractor 
     public void beginUpdate() {
     }
 

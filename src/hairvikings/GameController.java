@@ -61,7 +61,9 @@ public class GameController {
         }
     }
 
+
     private void createLink() {
+        // TODO: 08/12/2016 DIY maybe -> Graph or Edge
         if (areSelectionCellsNotNull() && !areSelectionCellsEquals()) {
             Edge edge = getGraph().getModel().getEdge(firstCellClicked, secondCellClicked);
             if (edge != null) {
@@ -71,15 +73,17 @@ public class GameController {
         }
         clearSelectionCells();
     }
-
+    // TODO: 08/12/2016 DIY maybe -> Graph or Edge
     private boolean areSelectionCellsNotNull() {
         return firstCellClicked != null && secondCellClicked != null;
     }
 
+    // TODO: 08/12/2016 DIY maybe -> Graph or Edge
     private boolean areSelectionCellsEquals() {
         return firstCellClicked.getCellId().equals(secondCellClicked.getCellId());
     }
 
+    // TODO: 08/12/2016 DIY maybe -> Graph or Edge
     private void clearSelectionCells() {
         if(firstCellClicked != null) {
             firstCellClicked.unSelect();

@@ -6,6 +6,8 @@ import hairvikings.graph.Cell;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
+import java.util.List;
+
 /**
  * Created by Quentin Gangler on 25/11/2016.
  *
@@ -62,26 +64,87 @@ public class LocationCell  extends Cell{
         ((Circle) getView()).setFill(Color.GRAY);
     }
 
-    public void decreaseResources(int amount){
+
+    //When a link is create to an enemy Cell
+    public void removeResourcesToEnemyChild(String cellID ,int amount){
+
+        List<Cell> allChildren = this.getCellChildren();
+        LocationCell enemyChild = null;
+
+        for(int i= 0; i < allChildren.size();i++)
+        {
+            if(allChildren.get(i) instanceof LocationCell)
+            {
+                LocationCell child = (LocationCell)allChildren.get(i);
+
+                if(child.getCellId().equals(cellID))
+                {
+                    enemyChild = child;
+                    enemyChild.decreaseResources(amount);
+                }
+            }
+        }
+    }
+
+
+
+    public void decreaseResources(int amount/*, LocationCell cellCauseDecrease */){
         this.resources -= amount;
         if(this.resources <= 0)
         {
-            //change the team;
+
+
+            //This is the UC18
+            /*if(team == Team.HAIRY)
+            {
+                this.team = Team.BOLD;
+
+            }
+            else if(team == Team.BOLD)
+            {
+                this.team = Team.HAIRY;
+            }
+            else if(team == Team.NEUTRAL) {
+
+                if (cellCauseDecrease.getTeam() == Team.BOLD)
+                    this.team = Team.HAIRY;
+                else if (cellCauseDecrease.getTeam() == Team.HAIRY)
+                    this.team = Team.BOLD;
+
+            }*/
         }
     }
 
     public void decreaseProductivity(int amount){
         this.productivity -=amount;
+
+        //The resources are decreased on the game Timer
+        /*
         if(this.productivity < 0)
         {
             //decrease resources
+
         }
         else if(this.productivity > 0)
         {
             //increase resources
-        }
+        }*/
 
     }
 
+    public int getResources() {
+        return resources;
+    }
 
+    public void setResources(int resources) {
+        this.resources = resources;
+    }
+
+    public int getProductivity() {
+        return productivity;
+    }
+
+    public void setProductivity(int productivity) {
+        this.productivity = productivity;
+    }
 }
