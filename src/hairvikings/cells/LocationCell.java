@@ -87,6 +87,26 @@ public class LocationCell  extends Cell{
     }
 
 
+    public void removeProductivityToEnemyChild(String cellID, int amount){
+        List<Cell> allChildren = this.getCellChildren();
+        LocationCell enemyChild = null;
+
+        for(int i= 0; i < allChildren.size();i++)
+        {
+            if(allChildren.get(i) instanceof LocationCell)
+            {
+                LocationCell child = (LocationCell)allChildren.get(i);
+
+                if(child.getCellId().equals(cellID))
+                {
+                    enemyChild = child;
+                    enemyChild.decreaseProductivity(amount);
+                }
+            }
+        }
+    }
+
+
 
     public void decreaseResources(int amount/*, LocationCell cellCauseDecrease */){
         this.resources -= amount;
