@@ -4,8 +4,10 @@ import hairvikings.AbstractPlayer;
 import hairvikings.Team;
 import hairvikings.Level;
 import hairvikings.graph.Cell;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
@@ -15,6 +17,7 @@ import javafx.scene.shape.Circle;
  */
 public class LocationCell  extends Cell{
 
+    private int resources;
     private Team team;
     private Level level;
 
@@ -23,11 +26,20 @@ public class LocationCell  extends Cell{
 
         team = Team.NEUTRAL;
 
-        level = Level.HOUSE;
+        resources = 0;//(int) (Math.random() * 151); for testing : display of cell resources
+        level = Level.getLevelFromResources(resources);
 
-        ImageView view = new ImageView(new Image(level.getImagePATH()));
-        view.setFitHeight(100);
-        view.setFitWidth(100);
+
+        ImageView imageView = new ImageView(new Image(level.getImagePATH()));
+        imageView.setFitHeight(100);
+        imageView.setFitWidth(100);
+
+
+        Label labelResources = new Label(resources + "");
+        labelResources.setTextFill(Color.CORAL);
+        StackPane view = new StackPane();
+        view.getChildren().addAll(imageView, labelResources);
+
 
         /*view.setStroke(Color.GRAY);
         view.setFill(Color.GRAY);
