@@ -67,6 +67,7 @@ public class GameController {
             if (edge != null) {
                edge.show();
                secondCellClicked.setTeam(player.getTeam());
+               secondCellClicked.setResources((int) (Math.random() * 151)); //for Testing : updateCellView function
             }
         }
         clearSelectionCells();

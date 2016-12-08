@@ -20,6 +20,8 @@ public class LocationCell  extends Cell{
     private int resources;
     private Team team;
     private Level level;
+    private  ImageView imageView;
+    private Label labelResources;
 
     public LocationCell(String cellId) {
         super(cellId);
@@ -29,13 +31,11 @@ public class LocationCell  extends Cell{
         resources = 0;//(int) (Math.random() * 151); for testing : display of cell resources
         level = Level.getLevelFromResources(resources);
 
-
-        ImageView imageView = new ImageView(new Image(level.getImagePATH()));
+        imageView = new ImageView(new Image(level.getImagePATH()));
         imageView.setFitHeight(100);
         imageView.setFitWidth(100);
 
-
-        Label labelResources = new Label(resources + "");
+        labelResources = new Label(resources + "");
         labelResources.setTextFill(Color.CORAL);
         StackPane view = new StackPane();
         view.getChildren().addAll(imageView, labelResources);
@@ -63,12 +63,29 @@ public class LocationCell  extends Cell{
     }
 
     public void select() {
+        labelResources.setTextFill(Color.MEDIUMORCHID);
        /* ((Circle) getView()).setStroke(Color.GREEN);
         ((Circle) getView()).setFill(Color.GREEN);*/
     }
 
     public void unSelect() {
+        labelResources.setTextFill(Color.CORAL);
        /* ((Circle) getView()).setStroke(Color.GRAY);
         ((Circle) getView()).setFill(Color.GRAY);*/
+    }
+
+    public void update(){
+        updateCellView();
+    }
+
+    private void updateCellView(){
+        level = Level.getLevelFromResources(resources);
+        imageView.setImage(new Image(level.getImagePATH()));
+        labelResources.setText(resources + "");
+    }
+
+    public void setResources(int resources){
+        this.resources = resources;
+        update();
     }
 }
