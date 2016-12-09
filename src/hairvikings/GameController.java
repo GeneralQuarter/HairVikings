@@ -38,6 +38,10 @@ public class GameController {
 
         Layout layout = new FixedLayout(graph, width, height);
         layout.execute();
+
+        Timer timer = new Timer(graph);
+        Thread thread = new Thread(timer);
+        thread.start();
     }
 
     private void clickCellEventHandlerInitialize() {
@@ -68,11 +72,23 @@ public class GameController {
             Edge edge = getGraph().getModel().getEdge(firstCellClicked, secondCellClicked);
             if (edge != null) {
                edge.show();
-               secondCellClicked.setTeam(player.getTeam());
+
+                System.out.println("Link between " + firstCellClicked.getCellId()+ " and "+ secondCellClicked.getCellId()+ " created!");
+                System.out.println("Update resources of " + secondCellClicked.getCellId());
+                firstCellClicked.removeResourcesToEnemyChild(secondCellClicked.getCellId(),firstCellClicked.getResources()/2);
+                System.out.println("Update productivity of " + secondCellClicked.getCellId());
+                firstCellClicked.removeProductivityToEnemyChild(secondCellClicked.getCellId(),1);
+                System.out.println("Update productivity of " + firstCellClicked.getCellId());
+                firstCellClicked.decreaseProductivity(1);
+
+                secondCellClicked.setTeam(player.getTeam());
+
             }
         }
         clearSelectionCells();
     }
+
+
     // TODO: 08/12/2016 DIY maybe -> Graph or Edge
     private boolean areSelectionCellsNotNull() {
         return firstCellClicked != null && secondCellClicked != null;

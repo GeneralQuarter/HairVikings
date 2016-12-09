@@ -28,6 +28,7 @@ public class Timer implements Runnable {
                     LocationCell cell =(LocationCell)cellList.get(i);
                     if(cell.getProductivity() < 0)
                     {
+                        System.out.println("Productivity for negative " + cell.getCellId() + ", resources decrease!");
                         cell.decreaseResources(Math.abs(cell.getProductivity()));
                     }
                 }

@@ -3,8 +3,16 @@ package hairvikings.cells;
 import hairvikings.AbstractPlayer;
 import hairvikings.Team;
 import hairvikings.graph.Cell;
+import javafx.geometry.Insets;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextBoundsType;
+
 
 import java.util.List;
 
@@ -12,11 +20,13 @@ import java.util.List;
  * Created by Quentin Gangler on 25/11/2016.
  *
  */
-public class LocationCell  extends Cell{
+public class LocationCell extends Cell{
 
     private Team team;
     private int resources;
     private int productivity;
+
+
 
 
     public LocationCell(String cellId) {
@@ -24,7 +34,7 @@ public class LocationCell  extends Cell{
 
         //temporary default initialisation
         resources = 50;
-        productivity = 5;
+        productivity = 2;
 
         team = Team.NEUTRAL;
 
@@ -40,7 +50,20 @@ public class LocationCell  extends Cell{
         view.setCenterY(radius);
 
         setView(view);
+
+        displayResourcesAndProductivityOnConsole();
+
     }
+
+
+
+     private void displayResourcesAndProductivityOnConsole(){
+         System.out.println(this.getCellId() +" R = "+resources);
+         System.out.println(this.getCellId() +" P = "+productivity);
+
+         System.out.println("\n");
+    }
+
 
     public Team getTeam() {
         return team;
@@ -65,7 +88,7 @@ public class LocationCell  extends Cell{
     }
 
 
-    //When a link is create to an enemy Cell
+
     public void removeResourcesToEnemyChild(String cellID ,int amount){
 
         List<Cell> allChildren = this.getCellChildren();
@@ -113,42 +136,19 @@ public class LocationCell  extends Cell{
         if(this.resources <= 0)
         {
 
-
             //This is the UC18
-            /*if(team == Team.HAIRY)
-            {
-                this.team = Team.BOLD;
+            System.out.println("cell change of team");
+            this.resources = 50;
 
-            }
-            else if(team == Team.BOLD)
-            {
-                this.team = Team.HAIRY;
-            }
-            else if(team == Team.NEUTRAL) {
-
-                if (cellCauseDecrease.getTeam() == Team.BOLD)
-                    this.team = Team.HAIRY;
-                else if (cellCauseDecrease.getTeam() == Team.HAIRY)
-                    this.team = Team.BOLD;
-
-            }*/
         }
+
+        displayResourcesAndProductivityOnConsole();
     }
 
     public void decreaseProductivity(int amount){
         this.productivity -=amount;
 
-        //The resources are decreased on the game Timer
-        /*
-        if(this.productivity < 0)
-        {
-            //decrease resources
-
-        }
-        else if(this.productivity > 0)
-        {
-            //increase resources
-        }*/
+        displayResourcesAndProductivityOnConsole();
 
     }
 
