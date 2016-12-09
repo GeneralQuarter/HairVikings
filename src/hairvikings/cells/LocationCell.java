@@ -2,12 +2,13 @@ package hairvikings.cells;
 
 import hairvikings.AbstractPlayer;
 import hairvikings.Team;
+import hairvikings.Level;
 import hairvikings.graph.Cell;
-import javafx.geometry.Insets;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Priority;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
@@ -22,33 +23,48 @@ import java.util.List;
  */
 public class LocationCell extends Cell{
 
+
     private Team team;
     private int resources;
     private int productivity;
-
-
+    private Level level;
+    private  ImageView imageView;
+    private Label labelResources;
 
 
     public LocationCell(String cellId) {
         super(cellId);
+
 
         //temporary default initialisation
         resources = 50;
         productivity = 2;
 
         team = Team.NEUTRAL;
-
-        //This should be an image rather than a circle.
         double radius = 25;
 
-        Circle view = new Circle(radius);
+        //Circle view = new Circle(radius);
 
-        view.setStroke(Color.GRAY);
+
+
+        //resources = 0;//(int) (Math.random() * 151); for testing : display of cell resources
+        level = Level.getLevelFromResources(resources);
+
+        imageView = new ImageView(new Image(level.getImagePATH()));
+        imageView.setFitHeight(100);
+        imageView.setFitWidth(100);
+
+        labelResources = new Label(resources + "");
+        labelResources.setTextFill(Color.CORAL);
+        StackPane view = new StackPane();
+        view.getChildren().addAll(imageView, labelResources);
+
+        /*view.setStroke(Color.GRAY);
         view.setFill(Color.GRAY);
 
         view.setCenterX(radius);
         view.setCenterY(radius);
-
+*/
         setView(view);
 
         displayResourcesAndProductivityOnConsole();
@@ -78,13 +94,30 @@ public class LocationCell extends Cell{
     }
 
     public void select() {
-        ((Circle) getView()).setStroke(Color.GREEN);
-        ((Circle) getView()).setFill(Color.GREEN);
+        labelResources.setTextFill(Color.MEDIUMORCHID);
+       /* ((Circle) getView()).setStroke(Color.GREEN);
+        ((Circle) getView()).setFill(Color.GREEN);*/
     }
 
     public void unSelect() {
-        ((Circle) getView()).setStroke(Color.GRAY);
-        ((Circle) getView()).setFill(Color.GRAY);
+        labelResources.setTextFill(Color.CORAL);
+       /* ((Circle) getView()).setStroke(Color.GRAY);
+        ((Circle) getView()).setFill(Color.GRAY);*/
+    }
+
+    public void update(){
+        updateCellView();
+    }
+
+    private void updateCellView(){
+        level = Level.getLevelFromResources(resources);
+        imageView.setImage(new Image(level.getImagePATH()));
+        labelResources.setText(resources + "");
+    }
+
+    public void setResources(int resources){
+        this.resources = resources;
+        update();
     }
 
 
@@ -154,10 +187,6 @@ public class LocationCell extends Cell{
 
     public int getResources() {
         return resources;
-    }
-
-    public void setResources(int resources) {
-        this.resources = resources;
     }
 
     public int getProductivity() {

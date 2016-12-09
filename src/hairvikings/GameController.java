@@ -73,6 +73,7 @@ public class GameController {
             if (edge != null) {
                edge.show();
 
+
                 System.out.println("Link between " + firstCellClicked.getCellId()+ " and "+ secondCellClicked.getCellId()+ " created!");
                 System.out.println("Update resources of " + secondCellClicked.getCellId());
                 firstCellClicked.removeResourcesToEnemyChild(secondCellClicked.getCellId(),firstCellClicked.getResources()/2);
@@ -81,7 +82,11 @@ public class GameController {
                 System.out.println("Update productivity of " + firstCellClicked.getCellId());
                 firstCellClicked.decreaseProductivity(1);
 
-                secondCellClicked.setTeam(player.getTeam());
+
+
+
+               secondCellClicked.setTeam(player.getTeam());
+               //secondCellClicked.setResources((int) (Math.random() * 151)); //for Testing : updateCellView function
 
             }
         }
